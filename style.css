@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary-color);
+}
+
+:root {
+  --primary-color: white;
+  --blue: #9bf1ff;
+}
+
+nav {
+  padding: 10px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+nav:hover {
+  color: var(--blue);
+}
+span {
+  background-color: white;
+  color: black;
+}
+
+header {
+  height: 80vh;
+  background: url(https://html5up.net/uploads/demos/forty/images/banner.jpg);
+  background-size: cover;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  text-align: start;
+  justify-content: center;
+  padding: 0 10%;
+  gap: 30px;
+}
+header .h-line {
+  height: 3px;
+  background-color: var(--primary-color);
+  width: 100%;
+}
+header > div:last-child {
+  display: flex;
+}
+header > div:last-child p {
+  min-width: 380px;
+  max-width: 500px;
+}
+header button {
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  width: 200px;
+  height: 50px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+header button:hover{
+    color: var(--blue);
+    border-color: var(--blue);
+}
+header * {
+  position: relative;
+  z-index: 2;
+}
+
+header::after {
+  content: "";
+  background-color: #24294352;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+section {
+}
+.row {
+  background-color: red;
+  display: flex;
+}
+
+.row > div {
+  height: 260px;
+
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  gap: 15px;
+  font-size: 1.5rem;
+}
+.row > div:first-child {
+  flex-grow: 1;
+  background: url(https://html5up.net/uploads/demos/forty/images/pic01.jpg);
+}
+.row > div *{
+    position: relative;
+    z-index: 2;
+}
+.row > div:first-child::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+    transition: all 0.2s ease;
+    background-color: rgba(119, 0, 255, 0.505);
+} 
+.row > div:first-child:hover::after{
+    opacity: 0;
+
+}
+.row > div:last-child {
+  flex-grow: 2;
+  background-color: aliceblue;
+  background: url(https://html5up.net/uploads/demos/forty/images/pic02.jpg);
+}
+.row > div:last-child::after{
+        content: "";
+    position: absolute;
+    transition: all 0.2s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+    background-color: rgba(0, 255, 247, 0.281);
+
+}
+.row > div:last-child:hover::after{
+    opacity: 0;
+
+}
+.row2{
+    flex-direction: row-reverse;
+}
+
+
+main{
+    background-color: #242943;
+    display: flex;
+}
+main form{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+width:55% ;
+gap: 10px;
+padding: 5%;
+}
+main form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+main form div input ,main form div textarea{
+    width: 100%;
+    height: 40px;
+    border: none;
+    resize: none;
+
+    background-color: rgba(212, 212, 255, 0.035);
+}
+#message{
+    grid-column: 1/span 2;
+}
+
+main form div textarea{
+    height: 150px;
+}
+main  .buttons{
+    flex-direction: row;
+}
+.infos {
+
+    width: 45%;
+}
+.infos .box{
+    height: 33%;
+    width: 100%;
+    border: 1px solid white;
+    border-top: none;
+display: flex;
+padding:40px 40px;
+gap: 10px;
+
+}
+
+.box i{
+    background-color: white;
+    padding: 10px;
+    height: fit-content;
+    color: black;
+    border-radius: 50%;
+}
+.box div{
+    line-height: 40px;
+}
+
+
+
+
+@media (max-width: 980px)   {
+    .row > div{
+        flex-grow: 1 !important;
+    }
+}
+
+@media (max-width: 740px) {
+  header {
+    height: 60vh;
+  }
+  header > div:last-child {
+    flex-direction: column;
+    gap: 10px;
+  }
+  header > div:last-child p {
+    min-width: auto;
+  }
+   .row {
+    flex-direction: column;
+   }
+}
