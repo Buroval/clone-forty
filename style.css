@@ -31,6 +31,7 @@ span {
 
 header {
   height: 80vh;
+  min-height: 350px;
   background: url(https://html5up.net/uploads/demos/forty/images/banner.jpg);
   background-size: cover;
 
@@ -153,13 +154,15 @@ section {
 main{
     background-color: #242943;
     display: flex;
+
 }
 main form{
     display:grid;
+       border-bottom: 1px solid rgba(255, 255, 255, 0.194);
+padding: 5%;
     grid-template-columns: 1fr 1fr;
 width:55% ;
 gap: 10px;
-padding: 5%;
 }
 main form div{
     display: flex;
@@ -185,14 +188,43 @@ main form div textarea{
 main  .buttons{
     flex-direction: row;
 }
+main  .buttons button{
+padding: 5px;
+height: 40px;
+font-size: 1.1rem;
+border: none;
+text-transform: uppercase;
+transition: all 0.2s ease;
+cursor: pointer;
+}
+main  .buttons button:first-child{
+  background-color: var(--primary-color);
+  white-space: nowrap;
+}
+main  .buttons button:first-child:hover{
+  background-color: var(--blue);
+
+}
+
+main  .buttons button:last-child{
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+main  .buttons button:last-child:hover{
+  border-color: var(--blue);
+  color: var(--blue);
+
+}
+
 .infos {
 
     width: 45%;
 }
 .infos .box{
-    height: 33%;
+    height: 33.324%;
     width: 100%;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.194);
     border-top: none;
 display: flex;
 padding:40px 40px;
@@ -211,12 +243,22 @@ gap: 10px;
     line-height: 40px;
 }
 
+footer{
+  background-color: #242943;
+}
+
 
 
 
 @media (max-width: 980px)   {
     .row > div{
         flex-grow: 1 !important;
+    }
+    main{
+      flex-direction: column;
+    }
+    main form,.infos {
+      width: 100%;
     }
 }
 
@@ -234,4 +276,9 @@ gap: 10px;
    .row {
     flex-direction: column;
    }
+}
+@media (max-width: 480px) {
+  main form {
+    display: block;
+  }
 }
